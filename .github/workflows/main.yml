@@ -1,0 +1,29 @@
+on: 
+
+  pull_request: 
+
+    branches: 
+
+      - master 
+
+    types: 
+
+      - opened 
+
+jobs: 
+
+  check-pr: 
+
+    runs-on: ubuntu-latest 
+
+    steps: 
+
+      - name: Checkout code 
+
+        uses: actions/checkout@v3 
+
+      - name: Notify PR creation 
+
+        run: | 
+
+          echo "A pull request has been created targeting the main branch." 
